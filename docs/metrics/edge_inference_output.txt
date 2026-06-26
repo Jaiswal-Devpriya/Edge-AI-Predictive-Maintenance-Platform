@@ -1,0 +1,9 @@
+Edge inference service started...
+
+--- Edge Inference Summary ---
+Total events processed: 10000
+Forwarded anomaly events: 1536
+Dropped normal events: 8464
+Cloud traffic reduction: 84.64%
+Duration seconds: 30.28
+Processing throughput events/sec: 330.24
