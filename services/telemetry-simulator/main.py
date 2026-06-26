@@ -2,10 +2,13 @@ import json
 import random
 import time
 from datetime import datetime, timezone
+from kafka import KafkaProducer
 
 
 NUM_DEVICES = 5000
 EVENTS_TO_GENERATE = 10000
+KAFKA_TOPIC = "telemetry-events"
+KAFKA_BOOTSTRAP_SERVERS = "localhost:9092"
 
 
 def generate_telemetry(device_id: str) -> dict:
@@ -26,19 +29,31 @@ def generate_telemetry(device_id: str) -> dict:
 
 
 def main():
-    print(f"Starting telemetry simulator for {NUM_DEVICES} devices...")
+    producer = KafkaProducer(
+        bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
+        value_serializer=lambda value: json.dumps(value).encode("utf-8"),
+        key_serializer=lambda key: key.encode("utf-8"),
+    )
+
+    print(f"Publishing {EVENTS_TO_GENERATE} telemetry events to Kafka topic '{KAFKA_TOPIC}'...")
 
     start = time.time()
 
-    for i in range(EVENTS_TO_GENERATE):
+    for _ in range(EVENTS_TO_GENERATE):
         device_id = f"device-{random.randint(1, NUM_DEVICES)}"
         event = generate_telemetry(device_id)
 
-        print(json.dumps(event))
+        producer.send(
+            KAFKA_TOPIC,
+            key=device_id,
+            value=event,
+        )
+
+    producer.flush()
 
     duration = time.time() - start
-    print("\n--- Simulation Summary ---")
-    print(f"Generated events: {EVENTS_TO_GENERATE}")
+    print("\n--- Kafka Publishing Summary ---")
+    print(f"Published events: {EVENTS_TO_GENERATE}")
     print(f"Simulated devices: {NUM_DEVICES}")
     print(f"Duration seconds: {duration:.2f}")
     print(f"Events/sec: {EVENTS_TO_GENERATE / duration:.2f}")

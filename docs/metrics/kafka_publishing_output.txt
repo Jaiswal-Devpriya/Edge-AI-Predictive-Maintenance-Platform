@@ -1,0 +1,7 @@
+Publishing 10000 telemetry events to Kafka topic 'telemetry-events'...
+
+--- Kafka Publishing Summary ---
+Published events: 10000
+Simulated devices: 5000
+Duration seconds: 0.66
+Events/sec: 15245.51
