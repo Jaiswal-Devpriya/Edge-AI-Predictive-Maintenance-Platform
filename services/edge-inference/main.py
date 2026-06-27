@@ -1,3 +1,6 @@
+from dbm import error
+
+import requests
 import json
 import time
 import numpy as np
@@ -9,6 +12,7 @@ KAFKA_TOPIC = "telemetry-events"
 KAFKA_BOOTSTRAP_SERVERS = "localhost:9092"
 MODEL_PATH = "models/anomaly_detector.onnx"
 MAX_EVENTS_TO_PROCESS = 10000
+CLOUD_API_URL = "http://localhost:8000/anomalies"
 
 
 def event_to_features(event: dict) -> np.ndarray:
@@ -58,6 +62,23 @@ def main():
 
         if prediction == -1:
             forwarded_events += 1
+
+            event["anomaly_score"] = 1.0
+            event["severity"] = "critical"
+
+            try:
+                response = requests.post(
+                CLOUD_API_URL,
+                json=event,
+                timeout=2,
+                )
+
+                if response.status_code != 200:
+                    print(f"Cloud API returned {response.status_code}")
+
+            except requests.RequestException as error:
+                print(f"Failed to send anomaly to Cloud API: {error}")
+
         else:
             dropped_events += 1
 

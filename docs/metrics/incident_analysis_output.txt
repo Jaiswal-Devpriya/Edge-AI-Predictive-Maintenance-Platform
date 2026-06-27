@@ -1,0 +1,7 @@
+
+--- Incident Analysis Report ---
+Device ID: device-3440
+Severity: critical
+Root Cause: general equipment degradation pattern
+Recommendation: schedule preventive inspection and continue monitoring
+Response time seconds: 0.0268

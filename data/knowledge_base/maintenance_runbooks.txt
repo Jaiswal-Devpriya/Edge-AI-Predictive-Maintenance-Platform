@@ -1,0 +1,9 @@
+High vibration with high RPM usually indicates bearing wear, rotor imbalance, shaft misalignment, or loose mounting bolts. Recommended action: inspect bearings, check shaft alignment, and schedule vibration analysis.
+
+High temperature with high current usually indicates motor overload, cooling failure, lubrication breakdown, or electrical resistance. Recommended action: inspect cooling system, check lubricant levels, and reduce machine load.
+
+Low voltage with high current can indicate electrical instability, power supply issues, or motor winding stress. Recommended action: inspect power supply, check wiring, and test motor windings.
+
+High pressure and high temperature together may indicate pump blockage, valve restriction, or fluid flow obstruction. Recommended action: inspect valves, filters, and downstream pressure points.
+
+High humidity near electrical equipment can increase corrosion risk and sensor instability. Recommended action: inspect seals, check enclosure protection, and schedule preventive maintenance.
