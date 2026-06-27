@@ -1,0 +1,10 @@
+Edge inference service started with ONNX Runtime...
+
+--- ONNX Edge Inference Summary ---
+Total events processed: 10000
+Forwarded anomaly events: 2816
+Dropped normal events: 7184
+Cloud traffic reduction: 71.84%
+Average ONNX inference latency ms: 0.5816
+Duration seconds: 9.20
+Processing throughput events/sec: 1086.69

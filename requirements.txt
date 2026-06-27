@@ -1,1 +1,4 @@
 kafka-python
+skl2onnx
+onnx
+onnxruntime

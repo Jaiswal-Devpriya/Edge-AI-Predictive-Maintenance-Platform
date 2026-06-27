@@ -1,0 +1,5 @@
+--- Model Training Summary ---
+Training rows: 50000
+Features: 7
+Saved sklearn model: models/anomaly_detector.joblib
+Saved ONNX model: models/anomaly_detector.onnx

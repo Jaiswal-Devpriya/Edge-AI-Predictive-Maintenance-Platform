@@ -29,10 +29,15 @@ def generate_telemetry(device_id: str) -> dict:
 
 
 def main():
+    
     producer = KafkaProducer(
         bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
         value_serializer=lambda value: json.dumps(value).encode("utf-8"),
         key_serializer=lambda key: key.encode("utf-8"),
+        acks=1,
+        retries=3,
+        request_timeout_ms=10000,
+        max_block_ms=10000,
     )
 
     print(f"Publishing {EVENTS_TO_GENERATE} telemetry events to Kafka topic '{KAFKA_TOPIC}'...")
@@ -49,7 +54,8 @@ def main():
             value=event,
         )
 
-    producer.flush()
+    producer.flush(timeout=10)
+    producer.close()
 
     duration = time.time() - start
     print("\n--- Kafka Publishing Summary ---")
