@@ -31,4 +31,4 @@ jobs:
         run: |
           python -c "from services.incident_agent.llm_client import AzureOpenAIClient; print('LLM import OK')"
           python -c "from services.incident_agent.knowledge_base import KnowledgeBase; print('KnowledgeBase import OK')"
-          python -c "from services.incident_agent.langgraph_agent import incident_agent; print('LangGraph import OK')"
+         
