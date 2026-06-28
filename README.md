@@ -24,7 +24,7 @@
 
 ---
 
-# 📖 Overview
+# Overview
 
 Imagine a manufacturing plant with **thousands of industrial machines** continuously generating sensor readings such as:
 
@@ -129,8 +129,8 @@ The result is a scalable, bandwidth-efficient predictive maintenance platform ca
                 | ONNX Runtime + Isolation Forest          |
                 +-------------------+----------------------+
                                     |
-                     Normal          |          Anomaly
-                    Discard          |          Forward
+                     Normal         |          Anomaly
+                    Discard         |          Forward
                                     ▼
                       +-----------------------------+
                       | FastAPI Cloud Service       |
@@ -165,7 +165,7 @@ The result is a scalable, bandwidth-efficient predictive maintenance platform ca
 
 ---
 
-# ⚙ End-to-End Workflow
+# End-to-End Workflow
 
 ```text
 Telemetry Generated
@@ -346,7 +346,7 @@ Edge-AI-Predictive-Maintenance-Platform/
 
 ---
 
-# ⚡ Quick Start
+# Quick Start
 
 ## 1. Clone Repository
 
@@ -719,10 +719,7 @@ The following screenshots demonstrate the complete execution flow of the platfor
 
 All supporting services are started using Docker Compose.
 
-```text
-screenshots/docker-containers-running.png
-```
-
+![alt text](screenshots/docker_containers_running.png)
 ---
 
 ## 2. Kafka Streaming
