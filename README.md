@@ -726,9 +726,7 @@ All supporting services are started using Docker Compose.
 
 Telemetry events are published to Kafka before being consumed by the edge inference service.
 
-```text
-screenshots/kafka-topic-created.png
-```
+![alt text](screenshots/kafka_topic_created.png)
 
 ---
 
@@ -736,9 +734,7 @@ screenshots/kafka-topic-created.png
 
 Health endpoint confirms that the cloud backend is operational.
 
-```text
-screenshots/fastapi-health-check.png
-```
+![alt text](screenshots/fastapi_health_check.png)
 
 ---
 
@@ -746,9 +742,7 @@ screenshots/fastapi-health-check.png
 
 The ONNX Runtime model evaluates telemetry locally and forwards only anomalous events.
 
-```text
-screenshots/onnx-edge-inference-output.png
-```
+![alt text](screenshots/onnix_edge_inference_output.png)
 
 ---
 
@@ -756,9 +750,7 @@ screenshots/onnx-edge-inference-output.png
 
 Detected anomalies are stored for historical analysis.
 
-```text
-screenshots/postgres-anomaly-count.png
-```
+![alt text](screenshots/postgres_anomaly_count.png)
 
 ---
 
@@ -766,9 +758,7 @@ screenshots/postgres-anomaly-count.png
 
 The latest anomaly for each device is cached for low-latency access.
 
-```text
-screenshots/redis-latest-anomaly.png
-```
+![alt text](screenshots/redis_latest_anomaly.png)
 
 ---
 
@@ -776,9 +766,7 @@ screenshots/redis-latest-anomaly.png
 
 LangGraph retrieves historical failures and maintenance knowledge before Azure OpenAI generates an explainable incident report.
 
-```text
-screenshots/langgraph-incident-report.png
-```
+![alt text](screenshots/langgraph_incident_report.png)
 
 ---
 
