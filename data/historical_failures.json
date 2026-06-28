@@ -1,0 +1,30 @@
+[
+  {
+    "failure_id": "HF-001",
+    "component": "motor bearing",
+    "symptoms": "high vibration, high rpm, rising temperature",
+    "root_cause": "bearing wear and shaft misalignment",
+    "resolution": "replaced bearing, realigned shaft, verified vibration levels"
+  },
+  {
+    "failure_id": "HF-002",
+    "component": "cooling system",
+    "symptoms": "high temperature, high current, normal vibration",
+    "root_cause": "blocked cooling vents and motor overload",
+    "resolution": "cleaned vents, reduced load, restored normal temperature"
+  },
+  {
+    "failure_id": "HF-003",
+    "component": "power supply",
+    "symptoms": "low voltage, high current, unstable rpm",
+    "root_cause": "voltage instability and motor winding stress",
+    "resolution": "inspected wiring, stabilized supply, tested motor windings"
+  },
+  {
+    "failure_id": "HF-004",
+    "component": "pump assembly",
+    "symptoms": "high pressure, high temperature, reduced flow",
+    "root_cause": "valve restriction and downstream blockage",
+    "resolution": "cleared blockage, inspected valves, normalized pressure"
+  }
+]
